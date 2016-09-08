@@ -2,7 +2,7 @@
 //Die die2;
 void setup()
 {
-	size(400, 400);
+	size(500, 550);
 	noLoop();
 	//die1 = new Die(200, 200);
 	//die2 = new Die(100, 100);
@@ -12,22 +12,21 @@ void draw()
 	//your code here
 	background((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
 	int dieDots = 0;
-	for(int i = 0;  i < 5; i = i + 1)
+	for(int i = 0;  i < 10; i = i + 1)
 	{
-		Die diei = new Die(i*100, 0);
-		diei.roll();
-		diei.show();
-		for(int k = 0; k < 5; k = k + 1)
+		for(int j = 0; j < 10; j = j + 1)
 		{
-			Die diek = new Die(i*100, k*100);
-			diek.roll();
-			diek.show();
+			Die diej = new Die(i*50, j*50);
+			diej.roll();
+			diej.show();
+			dieDots = dieDots + diej.dieValue;
+
 		}
 	}
-	//die1.roll();
-	//die1.show();
-	//die2.roll();
-	//die2.show();
+	textAlign(CENTER, CENTER);
+	fill(255);
+	textSize(50);
+	text("Total: " + dieDots, 250, 525);
 
 }
 void mousePressed()
@@ -55,46 +54,46 @@ class Die //models one single dice cube
 	{
 		//your code here
 		fill(255);
-		rect(myX, myY, 100, 100, 30);
+		rect(myX, myY, 50, 50, 15);
 		fill((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
 		if(dieValue == 1)
 		{
-			ellipse(myX+50, myY+50, 20, 20);
+			ellipse(myX+25, myY+25, 10, 10);
 		}
 		else if(dieValue == 2)
 		{
-			ellipse(myX+25, myY+25, 20, 20);
-			ellipse(myX+75, myY+75, 20, 20);
+			ellipse(myX+25/2, myY+25/2, 10, 10);
+			ellipse(myX+75/2, myY+75/2, 10, 10);
 		}
 		else if(dieValue == 3)
 		{
-			ellipse(myX+25, myY+25, 20, 20);
-			ellipse(myX+50, myY+50, 20, 20);
-			ellipse(myX+75, myY+75, 20, 20);
+			ellipse(myX+25/2, myY+25/2, 10, 10);
+			ellipse(myX+25, myY+25, 10, 10);
+			ellipse(myX+75/2, myY+75/2, 10, 10);
 		}
 		else if(dieValue == 4)
 		{
-			ellipse(myX+25, myY+25, 20, 20);
-			ellipse(myX+75, myY+25, 20, 20);
-			ellipse(myX+25, myY+75, 20, 20);
-			ellipse(myX+75, myY+75, 20, 20);
+			ellipse(myX+25/2, myY+25/2, 10, 10);
+			ellipse(myX+75/2, myY+25/2, 10, 10);
+			ellipse(myX+25/2, myY+75/2, 10, 10);
+			ellipse(myX+75/2, myY+75/2, 10, 10);
 		}
 		else if(dieValue == 5)
 		{
-			ellipse(myX+25, myY+25, 20, 20);
-			ellipse(myX+75, myY+25, 20, 20);
-			ellipse(myX+25, myY+75, 20, 20);
-			ellipse(myX+75, myY+75, 20, 20);
-			ellipse(myX+50, myY+50, 20, 20);
+			ellipse(myX+25/2, myY+25/2, 10, 10);
+			ellipse(myX+75/2, myY+25/2, 10, 10);
+			ellipse(myX+25/2, myY+75/2, 10, 10);
+			ellipse(myX+75/2, myY+75/2, 10, 10);
+			ellipse(myX+25, myY+25, 10, 10);
 		}
 		else if(dieValue == 6)
 		{
-			ellipse(myX+25, myY+25, 20, 20);
-			ellipse(myX+75, myY+25, 20, 20);
-			ellipse(myX+25, myY+75, 20, 20);
-			ellipse(myX+75, myY+75, 20, 20);
-			ellipse(myX+50, myY+25, 20, 20);
-			ellipse(myX+50, myY+75, 20, 20);
+			ellipse(myX+25/2, myY+25/2, 10, 10);
+			ellipse(myX+75/2, myY+25/2, 10, 10);
+			ellipse(myX+25/2, myY+75/2, 10, 10);
+			ellipse(myX+75/2, myY+75/2, 10, 10);
+			ellipse(myX+25, myY+25/2, 10, 10);
+			ellipse(myX+25, myY+75/2, 10, 10);
 		}
 	}
 }
