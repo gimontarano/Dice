@@ -1,5 +1,6 @@
-//Die die1;
-//Die die2;
+int clickNumber = 1;
+int dieDots = 0;
+int totalDots = dieDots;
 void setup()
 {
 	size(500, 550);
@@ -11,7 +12,7 @@ void draw()
 {
 	//your code here
 	background((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
-	int dieDots = 0;
+	
 	for(int i = 0;  i < 10; i = i + 1)
 	{
 		for(int j = 0; j < 10; j = j + 1)
@@ -26,12 +27,18 @@ void draw()
 	textAlign(CENTER, CENTER);
 	fill(255);
 	textSize(50);
-	text("Total: " + dieDots, 250, 525);
+	text("Roll Total: " + dieDots, 175, 525);
+	textSize(20);
+	text("Roll #" + clickNumber, 425, 510);
+
+	
 
 }
 void mousePressed()
 {
 	redraw();
+	clickNumber = clickNumber + 1;
+	totalDots = totalDots + dieDots;
 }
 class Die //models one single dice cube
 {
