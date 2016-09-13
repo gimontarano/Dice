@@ -26,10 +26,12 @@ void draw()
 	}
 	textAlign(CENTER, CENTER);
 	fill(255);
-	textSize(50);
-	text("Roll Total: " + dieDots, 175, 525);
+	textSize(45);
+	text("Roll Total: " + dieDots, 155, 525);
 	textSize(20);
 	text("Roll #" + clickNumber, 425, 510);
+	textSize(15);
+	text("Total of all rolls: " + (totalDots + dieDots), 415, 535);
 
 	
 
@@ -39,6 +41,7 @@ void mousePressed()
 	redraw();
 	clickNumber = clickNumber + 1;
 	totalDots = totalDots + dieDots;
+	dieDots = 0;
 }
 class Die //models one single dice cube
 {
