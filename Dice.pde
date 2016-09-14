@@ -25,19 +25,45 @@ void draw()
 		}
 	}
 	textAlign(CENTER, CENTER);
+	platypus();
 	fill(255);
 	textSize(45);
 	text("Roll Total: " + dieDots, 155, 525);
 	textSize(20);
-	text("Roll #" + clickNumber, 425, 510);
+	text("Roll #" + clickNumber, 375, 510);
 	textSize(15);
 	text("Total of all rolls: " + (totalDots + dieDots), 415, 535);
 
 	
 
 }
+void platypus() 
+{
+	noStroke();
+	int xX = (int)(Math.random()*500)+1;
+	int yY = (int)(Math.random()*500)+1;
+	//legs
+	fill(51, 255, 153);
+	rect(xX + 20, yY + 40, 15, 20, 10);
+	rect(xX + 5, yY + 40, 15, 20, 10);
+	rect(xX - 40, yY + 40, 15, 20, 10);
+	rect(xX - 25, yY + 40, 15, 20, 10);
+	//tail
+	fill(255, 128, 0);
+	rect(xX + 25, yY + 15, 60, 25, 30);
+	//body
+	fill(51, 255, 153);
+	rect(xX - 50, yY, 100, 50, 30);
+	//beak
+	fill(255, 128, 0);
+	rect(xX - 75, yY + 15, 40, 25, 50);
+	//eyes
+	fill(0);
+	ellipse(xX - 30, yY + 20, 10, 10);
+}
 void mousePressed()
 {
+	stroke(0);
 	redraw();
 	clickNumber = clickNumber + 1;
 	totalDots = totalDots + dieDots;
@@ -65,6 +91,7 @@ class Die //models one single dice cube
 		//your code here
 		fill(255);
 		rect(myX, myY, 50, 50, 15);
+
 		fill((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
 		if(dieValue == 1)
 		{
