@@ -40,8 +40,8 @@ void draw()
 void platypus() 
 {
 	noStroke();
-	int xX = (int)(Math.random()*500)+1;
-	int yY = (int)(Math.random()*500)+1;
+	int xX = (int)(Math.random()*400)+51;
+	int yY = (int)(Math.random()*400)+51;
 	//legs
 	fill(51, 255, 153);
 	rect(xX + 20, yY + 40, 15, 20, 10);
